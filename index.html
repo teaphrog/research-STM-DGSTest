@@ -4,40 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 2 Research Survey</title>
-    <link href="https://raw.githack.com/teaphrog/research-STM-DGSTest/main/main-web/output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
 </head>
-<body>
-    <div class="flex items-center h-full w-full bg-gray-100">
-        <form class="mb-4 flex flex-wrap justify-center w-full" id="form" >
-          <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-sm md:mx-auto border ">
-            <h1 class="block w-full text-center text-grey-darkest mb-6">Short-Term Memory Test & Sleep Questionnaire</h1>
-            <div class="flex flex-wrap">
-              <p class="text-grey-darkest mb-6">
-                Dear Participant,
-                <br><br>
-                You are invited to take part in our research study investigating the potential relationship between sleep duration and short-term memory. Before proceeding, we would like to kindly ask for your consent on taking part in this survey.
-                <br><br>
-                This survey follows the <b>Data Privacy Republic Act of 2012(R.A. 10173)</b> which requires processing the data only of individuals that has given consent. The data we(the researchers), gather from the individuals in this survey, will strictly only be used for research purposes.
-                <br><br>
-                <b>Consent:</b>
-                By clicking "I Agree", I have read and understood the information above, and voluntarily agree to participate in the study.
-              </p>
-              <p class="text-gray-400 mb-6">
-                If you have any questions or concerns about the study, please contact <!--Renze Jason Alcantara Tabag(+63 9058241502) or Benjamin Soriano Yuzon-->
-              </p>
-            </div>
-            <div class="flex items-center mb-4">
-              <input id="default-radio-1" type="radio" value="I Agree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">I Agree</label>
-            </div>
-            <div class="flex items-center">
-                <input checked id="default-radio-2" type="radio" value="I Disagree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">I Disagree</label>
-            </div>
-            <button class="mt-6 px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit">Submit</button>
-          </div>
-        </form>
-    </div>
+
+<script type="text/javascript">
+
+
+    function toggle_visibility(id) { 
+      var e = document.getElementById(id);
+      if(e.style.display == 'flex')
+         e.style.display = 'none';
+      else
+         e.style.display = 'flex';
+  }
+
+    async function disappear() {
+      document.getElementById('formContainer').classList.toggle('disappear');
+      
+  }
+</script>
+
+<body class="bg-gray-100">
+  <div id="formContainer" class="items-center h-full w-full" style="display:flex">
+    <form class="mb-4 flex flex-wrap justify-center w-full" id="form">
+      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
+        <h1 class="block w-full text-center text-grey-darkest mb-6">Short-Term Memory Test & Sleep Questionnaire</h1>
+        <div class="flex flex-wrap">
+          <p class="text-grey-darkest mb-6">
+            Dear Participant,
+            <br><br>
+            You are invited to take part in our research study investigating the potential relationship between sleep duration and short-term memory. Before proceeding, we would like to kindly ask for your consent on taking part in this survey.
+            <br><br>
+            This survey follows the <b>Data Privacy Republic Act of 2012(R.A. 10173)</b> which requires processing the data only of individuals that has given consent. The data we(the researchers), gather from the individuals in this survey, will strictly only be used for research purposes.
+            <br><br>
+            <b>Consent:</b>
+            By clicking "I Agree", I have read and understood the information above, and voluntarily agree to participate in the study.
+            <br><br>
+            <span class="text-gray-400 mb-6">If you have any questions or concerns about the study, please contact +63 9058241502</span>
+          </p>
+        </div>
+        <div class="flex items-center mb-4">
+          <input id="default-radio-1" type="radio" value="I Agree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">I Agree</label>
+        </div>
+        <div class="flex items-center">
+            <input checked id="default-radio-2" type="radio" value="I Disagree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">I Disagree</label>
+        </div>
+        <button class="mt-6 px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit">Submit/Next</button>
+      </div>
+    </form>
+  </div>
 
 
 </body>
@@ -46,7 +63,7 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwRH8UqWd7SUvGpmku7IhvfCZtoJwSQk_iP2OLYPw2Noq1W_EK2-B3_JDrefmF1s_Qk/exec'
     const form = document.querySelector('#form')
     const btn = document.querySelector('#submit')
-    
+
 
     form.addEventListener('submit', e => {
       e.preventDefault()
@@ -56,12 +73,15 @@
       console.log(form)
       fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => { 
-              btn.disabled = false
-      btn.innerHTML = "Submit"
-            alert('Success!', response) })
+            btn.disabled = false
+            btn.innerHTML = "Submit"
+            alert('Success!', response)
+            disappear().then(() => setTimeout(() => toggle_visibility('formContainer'), 310))
+          })
+        
         .catch(error => {
                      btn.disabled = false
-      btn.innerHTML = "Submit"
+      btn.innerHTML = "Submit/Next"
             alert('Error!', error.message)})
     })
 </script>

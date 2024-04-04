@@ -4,31 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 2 Research Survey</title>
-    <link href="https://raw.githack.com/teaphrog/research-STM-DGSTest/main/main-web/output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
 </head>
 
 <script type="text/javascript">
 
 
-    function toggle_visibility(id) { 
-      var e = document.getElementById(id);
-      if(e.style.display == 'flex')
-         e.style.display = 'none';
-      else
-         e.style.display = 'flex';
-  }
+//   var e = document.getElementById(id){
+//     if(e.style.display == 'flex')
+//         e.style.display = 'none';
+//      else
+//         e.style.display = 'flex';
+//  }
 
-    async function disappear() {
-      document.getElementById('formContainer').classList.toggle('disappear');
+    async function disappear(id) {
+      document.getElementById(id).classList.toggle('disappear');
       
   }
+    async function appear(id) {
+      document.getElementById(id).classList.toggle('appear');
+      
+  }
+
+    async function setInitPos(id) {
+      document.getElementById(id).classList.toggle('setInitPos');
+      
+  }
+
 </script>
 
 <body class="bg-gray-100">
-  <div id="formContainer" class="items-center h-full w-full" style="display:flex">
-    <form class="mb-4 flex flex-wrap justify-center w-full" id="form">
+  
+  <form class="mb-4 flex flex-wrap justify-center w-full" id="form">
+    <div id="formContainer0" class="formWindow active items-center h-full w-full">
       <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
-        <h1 class="block w-full text-center text-grey-darkest mb-6">Short-Term Memory Test & Sleep Questionnaire</h1>
+        <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Short-Term Memory Test & Sleep Questionnaire</h1>
+        <div class="flex flex-wrap">
+          <p class="text-grey-darkest mb-6">
+            Dear Participant,
+            <br><br>
+            You are invited to take part in our research study investigating the potential relationship between sleep duration and short-term memory. Before proceeding, we would like to kindly ask for your consent on taking part in this survey.
+            <br><br>
+            This survey follows the <b>Data Privacy Republic Act of 2012(R.A. 10173)</b> which requires processing the data only of individuals that has given consent. The data we(the researchers), gather from the individuals in this survey, will strictly only be used for research purposes.
+            <br><br>
+            <b><u>Consent:</u><br>
+            By clicking "I Agree", I have read and understood the information above, and voluntarily agree to participate in the study.</b>
+            <br><br>
+            <span class="text-gray-400 mb-6">If you have any questions or concerns about the study, please contact +63 9058241502</span>
+          </p>
+        </div>
+        <div class="flex items-center mb-4">
+          <input id="default-radio-1" type="radio" value="I Agree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">I Agree</label>
+        </div>
+        <div class="flex items-center mb-8">
+            <input id="default-radio-2" type="radio" value="I Disagree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">I Disagree</label>
+        </div>
+          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn" type="button">Next</button></div>
+          <div class="float-right"><p class="text-right text-grey-darkest">(1/3)</p></div>
+      </div>
+    </div>
+   <div id="formContainer1" class="formWindow items-center h-full w-full">
+      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
+        <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Sleep Report Questionnaire</h1>
+        <div class="flex flex-wrap">
+          <p class="text-grey-darkest mb-4">
+            Strand
+          </p>
+        </div>
+        <div class="flex items-center mb-4">
+          <input id="default-radio-3" type="radio" value="GAS" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="default-radio-3" class="ms-2 text-sm font-medium text-gray-900">General Academic Strand(GAS)</label>
+        </div>
+        <div class="flex items-center mb-4">
+            <input checked id="default-radio-4" type="radio" value="HUMSS" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="default-radio-4" class="ms-2 text-sm font-medium text-gray-900">Humanities and Social Sciences(HUMSS)</label>
+        </div>
+        <div class="flex items-center mb-9">
+            <input checked id="default-radio-4" type="radio" value="STEM" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="default-radio-4" class="ms-2 text-sm font-medium text-gray-900">Science, Technology, Engineering, and Mathematics(STEM)</label>
+        </div>
+        <div class="flex flex-wrap">
+          <p class="text-grey-darkest mb-4">
+            Choose a car:
+          </p>
+        </div>
+        <div class="flex items-center mb-9">
+          <select name="Daily Reported Average Sleep Duration" class= "ms-2 text-sm font-medium text-gray-900 border rounded px-2.5 py-2.5 bottom">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+            <option value="DaBaby lesgoo">DaBaby Convertible</option>
+          </select>
+        </div>
+        <div class="flex flex-wrap">
+          <p class="text-grey-darkest mb-4">
+            
+          </p>
+        </div>
+        <div class="flex items-center mb-8">
+          <select name="Reported Sleep Duration(Yesterday)" class= "ms-2 text-sm font-medium text-gray-900 border rounded px-2.5 py-2.5 mb-4 bottom">
+            <option value="hanarebanare no machi o">hanarebanare no machi o</option>
+            <option value="tsunagu densha we itte shimatta ne">tsunagu densha wa itte shimatta ne</option>
+            <option value="kuru kuru">kuru kuru</option>
+            <option value="we're just strangers to love">we're just strangers to love</option>
+            <option value="kantan na koto mo wakaranai wa">kantan na koto mo wakaranai wa</option>
+            <option value="atashi tte nandake">atashi tte nandake</option>
+            <option value="hi hi hifumi hi hifumi">hi hi hifumi hi hifumi</option>
+            <option value="onegai darling mite kiite">onegai darling mite kiite</option>
+            <option value="hoshii no wa katachi no nai monoe">hoshii no wa katachi no nai mono</option>
+            <option value="The missle knows where it is at all times">The missle knows where it is at all times</option>
+            <option value="It knows this because it knows where it isn't.">It knows this because it knows where it isn't.</option>
+            <option value="By subtracting where it is from where it isn't,">By subtracting where it is from where it isn't,</option>
+            <option value="or where it isn't from where it is (whichever is greater),">or where it isn't from where it is (whichever is greater),</option>
+            <option value="it obtains a difference, or deviation.">it obtains a difference, or deviation.</option>
+          </select>
+        </div>
+          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit">Submit/Next</button></div>
+          <div class="float-right"><p class="text-right text-grey-darkest">(2/3)</p></div>
+        </div>
+      </div>
+    </div>
+    <!--<div id="formContainer2" class="items-center h-full w-full" style="display:none">
+      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
+        <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Short-Term Memory Test & Sleep Questionnaire3</h1>
         <div class="flex flex-wrap">
           <p class="text-grey-darkest mb-6">
             Dear Participant,
@@ -47,14 +148,16 @@
           <input id="default-radio-1" type="radio" value="I Agree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
           <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">I Agree</label>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center mb-8">
             <input checked id="default-radio-2" type="radio" value="I Disagree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
             <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">I Disagree</label>
         </div>
-        <button class="mt-6 px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit">Submit/Next</button>
+          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit">Submit/Next</button></div>
+          <div class="float-right"><p class="text-right text-grey-darkest">(1/3)</p></div>
       </div>
-    </form>
-  </div>
+    </div>--> 
+  </form>
+ 
 
 
 </body>
@@ -63,7 +166,34 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwRH8UqWd7SUvGpmku7IhvfCZtoJwSQk_iP2OLYPw2Noq1W_EK2-B3_JDrefmF1s_Qk/exec'
     const form = document.querySelector('#form')
     const btn = document.querySelector('#submit')
+    const nextBtn = document.querySelectorAll('form .nextBtn')
+    const formWindows = Array.from(document.querySelectorAll('form .formWindow'))
+    const active = document.querySelector('form .formWindow.active')
+    var index = formWindows.indexOf(active)
+    var indexAnim = index + 1
+    console.log(formWindows);
 
+    nextBtn.forEach(button => {
+      button.addEventListener('click', (e) => {
+      disappear('formContainer'+ index)
+        .then(() => setTimeout(() => toggle_visibility('formContainer' + index), 310))
+        .then(() => setTimeout(() => nextForm('next'), 310))
+        .then(() => setInitPos('formContainer'+ indexAnim))
+        .then(() => toggle_visibility('formContainer'+ indexAnim))
+        .then(() => setTimeout(() => appear('formContainer'+ indexAnim), 310))
+      })
+    });
+    
+    function toggle_visibility(id){
+      document.getElementById(id).classList.toggle('active')
+    }
+
+    function nextForm(btn){
+      console.log(index)
+      if(btn === 'next'){
+        index ++
+      }
+    }
 
     form.addEventListener('submit', e => {
       e.preventDefault()
@@ -76,7 +206,9 @@
             btn.disabled = false
             btn.innerHTML = "Submit"
             alert('Success!', response)
-            disappear().then(() => setTimeout(() => toggle_visibility('formContainer'), 310))
+            disappear('formContainer1')
+            .then(() => setTimeout(() => toggle_visibility('formContainer1'), 310))
+            //.then(() => setTimeout(() => toggle_visibility('formContainer2'), 310))
           })
         
         .catch(error => {

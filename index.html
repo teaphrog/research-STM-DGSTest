@@ -4,18 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 2 Research Survey</title>
-    <link href="https://raw.githack.com/teaphrog/research-STM-DGSTest/main/main-web/output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
 </head>
 
-<script type="text/javascript">
-
-
-//   var e = document.getElementById(id){
-//     if(e.style.display == 'flex')
-//         e.style.display = 'none';
-//      else
-//         e.style.display = 'flex';
-//  }
+<script type="text/javascript"> // Transitions
 
     async function disappear(id) {
       document.getElementById(id).classList.toggle('disappear');
@@ -31,11 +23,21 @@
       
   }
 
+    async function removeAppear(id) {
+        document.getElementById(id).classList.remove('appear');
+        
+    }
+
+    async function removeSetInitPos(id) {
+        document.getElementById(id).classList.remove('setInitPos');
+    }
 </script>
 
 <body class="bg-gray-100">
   
-  <form class="mb-4 flex flex-wrap justify-center w-full" id="form">
+  <form id="form"></form>
+  <form id="testAnswerSubmit"></form>
+  <div class="beegContainer mb-4 flex flex-wrap justify-center w-full" id="beegContainer">
     <div id="formContainer0" class="formWindow active items-center h-full w-full">
       <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
         <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Short-Term Memory Test & Sleep Questionnaire</h1>
@@ -54,167 +56,465 @@
           </p>
         </div>
         <div class="flex items-center mb-4">
-          <input id="default-radio-1" type="radio" value="I Agree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-          <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">I Agree</label>
+          <input form="form" id="default-radio-1" type="radio" value="I Agree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900" >I Agree</label>
         </div>
         <div class="flex items-center mb-8">
-            <input id="default-radio-2" type="radio" value="I Disagree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <input form="form" id="default-radio-2" type="radio" value="I Disagree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
             <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">I Disagree</label>
         </div>
-          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn" type="button">Next</button></div>
-          <div class="float-right"><p class="text-right text-grey-darkest">(1/3)</p></div>
+          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn" type="button" form="form">Next</button></div>
+          <div class="float-right"><p class="py-1 text-grey-darkest">(1/3)</p></div>
       </div>
     </div>
-   <div id="formContainer1" class="formWindow items-center h-full w-full">
+    <div id="formContainer1" class="formWindow items-center h-full w-full">
       <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
         <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Sleep Report Questionnaire</h1>
         <div class="flex flex-wrap">
-          <p class="text-grey-darkest mb-4">
+          <p class="text-grey-darkest font-semibold mb-4">
             Strand
           </p>
         </div>
         <div class="flex items-center mb-4">
-          <input id="default-radio-3" type="radio" value="GAS" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <input id="default-radio-3"  form="form" type="radio" value="GAS" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
           <label for="default-radio-3" class="ms-2 text-sm font-medium text-gray-900">General Academic Strand(GAS)</label>
         </div>
         <div class="flex items-center mb-4">
-            <input checked id="default-radio-4" type="radio" value="HUMSS" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <input id="default-radio-4"  form="form" type="radio" value="HUMSS" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
             <label for="default-radio-4" class="ms-2 text-sm font-medium text-gray-900">Humanities and Social Sciences(HUMSS)</label>
         </div>
         <div class="flex items-center mb-9">
-            <input checked id="default-radio-4" type="radio" value="STEM" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="default-radio-4" class="ms-2 text-sm font-medium text-gray-900">Science, Technology, Engineering, and Mathematics(STEM)</label>
+            <input id="default-radio-5"  form="form" type="radio" value="STEM" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="default-radio-5" class="ms-2 text-sm font-medium text-gray-900">Science, Technology, Engineering, and Mathematics(STEM)</label>
         </div>
         <div class="flex flex-wrap">
-          <p class="text-grey-darkest mb-4">
-            Choose a car:
+          <p class="text-grey-darkest font-semibold mb-4">
+            How many hours of sleep on a daily basis do you get on average?
           </p>
         </div>
         <div class="flex items-center mb-9">
-          <select name="Daily Reported Average Sleep Duration" class= "ms-2 text-sm font-medium text-gray-900 border rounded px-2.5 py-2.5 bottom">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-            <option value="DaBaby lesgoo">DaBaby Convertible</option>
+          <select form="form" name="Daily Reported Average Sleep Duration" class= "ms-2 text-sm font-medium text-gray-900 border-2 rounded px-2.5 py-2.5">
+            <option style='display:none' value=""></option>
+            <option value="1-2">1-2 hours</option>
+            <option value="2-4">2-4 hours</option>
+            <option value="4-6">4-6 hours</option>
+            <option value="6-8">6-8 hours</option>
+            <option value="8-10">8-10 hours</option>
+            <option value="10+">more than 10 hours</option>
           </select>
         </div>
-        <div class="flex flex-wrap">
-          <p class="text-grey-darkest mb-4">
-            
+      <div class="flex flex-wrap">
+          <p class="text-grey-darkest font-semibold mb-4">
+            How many hours of sleep did you get last night?
           </p>
-        </div>
-        <div class="flex items-center mb-8">
-          <select name="Reported Sleep Duration(Yesterday)" class= "ms-2 text-sm font-medium text-gray-900 border rounded px-2.5 py-2.5 mb-4 bottom">
-            <option value="hanarebanare no machi o">hanarebanare no machi o</option>
-            <option value="tsunagu densha we itte shimatta ne">tsunagu densha wa itte shimatta ne</option>
-            <option value="kuru kuru">kuru kuru</option>
-            <option value="we're just strangers to love">we're just strangers to love</option>
-            <option value="kantan na koto mo wakaranai wa">kantan na koto mo wakaranai wa</option>
-            <option value="atashi tte nandake">atashi tte nandake</option>
-            <option value="hi hi hifumi hi hifumi">hi hi hifumi hi hifumi</option>
-            <option value="onegai darling mite kiite">onegai darling mite kiite</option>
-            <option value="hoshii no wa katachi no nai monoe">hoshii no wa katachi no nai mono</option>
-            <option value="The missle knows where it is at all times">The missle knows where it is at all times</option>
-            <option value="It knows this because it knows where it isn't.">It knows this because it knows where it isn't.</option>
-            <option value="By subtracting where it is from where it isn't,">By subtracting where it is from where it isn't,</option>
-            <option value="or where it isn't from where it is (whichever is greater),">or where it isn't from where it is (whichever is greater),</option>
-            <option value="it obtains a difference, or deviation.">it obtains a difference, or deviation.</option>
+        <div class="flex items-center mb-9">
+          <select form="form" name="Reported Sleep Duration(Yesterday)" class= "ms-2 text-sm font-medium text-gray-900 border-2 rounded px-2.5 py-2.5">
+            <option style='display:none' value=""></option>
+            <option value="1-2">less than an hour</option>
+            <option value="1-2">1-2 hours</option>
+            <option value="2-4">2-4 hours</option>
+            <option value="4-6">4-6 hours</option>
+            <option value="6-8">6-8 hours</option>
+            <option value="8-10">8-10 hours</option>
+            <option value="10+">more than 10 hours</option>
           </select>
         </div>
-          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit">Submit/Next</button></div>
-          <div class="float-right"><p class="text-right text-grey-darkest">(2/3)</p></div>
+
+        <p class="text-grey-darkest font-semibold mb-4">
+          On a 1-7 scale, what do you rate your quality of sleep last night?
+        </p>
+        
+        <div class="flex items-center">
+          <div class="flex items-center likert scaleContainer ms-2" style="background:#ff7480;"></div>
+          <p class="ms-2">- Very Dissatisfied</p>
         </div>
+        <div class="flex items-center w-full">
+          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#ff8b94;"></div>
+          <p class="ms-2">- Dissatisfied</p>
+        </div>
+        <div class="flex items-center w-full">
+          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#ffaaa5;"></div>
+          <p class="ms-2">- Slightly Dissatisfied</p>
+        </div>
+        <div class="flex items-center w-full">
+          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#ffd3b6;"></div>
+          <p class="ms-2">- Neutral</p>
+        </div>
+        <div class="flex items-center w-full">
+          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#dcedc1;"></div>
+          <p class="ms-2">- Slightly Satisfied</p>
+        </div>
+        <div class="flex items-center w-full">
+          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#a8e6cf;"></div>
+          <p class="ms-2">- Satisfied</p>
+        </div>
+        <div class="flex items-center w-full">
+          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#84e3c8;"></div>
+          <p class="ms-2">- Very Satisfied</p>
+        </div>
+        <div class="flex items-center likert mt-8 mb-8 w-full justify-center">
+          <label><p class="text-center">1</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="1"/><span style="background:#ff7480;"></span></label>
+          <label><p class="text-center">2</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="2"/><span style="background:#ff8b94;"></span></label>
+          <label><p class="text-center">3</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="3"/><span style="background:#ffaaa5;"></span></label>
+          <label><p class="text-center">4</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="4"/><span style="background:#ffd3b6;"></span></label>
+          <label><p class="text-center">5</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="5"/><span style="background:#dcedc1;"></span></label>
+          <label><p class="text-center">6</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="6"/><span style="background:#a8e6cf;"></span></label>
+          <label><p class="text-center">7</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="7"/><span style="background:#84e3c8;"></span></label>
+        </div>
+      </div>
+          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn" type="button">Proceed to Memory Test</button></div>
+          <div class="float-right"><p class="py-1 text-grey-darkest">(2/3)</p></div> 
       </div>
     </div>
-    <!--<div id="formContainer2" class="items-center h-full w-full" style="display:none">
-      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
-        <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Short-Term Memory Test & Sleep Questionnaire3</h1>
-        <div class="flex flex-wrap">
-          <p class="text-grey-darkest mb-6">
-            Dear Participant,
-            <br><br>
-            You are invited to take part in our research study investigating the potential relationship between sleep duration and short-term memory. Before proceeding, we would like to kindly ask for your consent on taking part in this survey.
-            <br><br>
-            This survey follows the <b>Data Privacy Republic Act of 2012(R.A. 10173)</b> which requires processing the data only of individuals that has given consent. The data we(the researchers), gather from the individuals in this survey, will strictly only be used for research purposes.
-            <br><br>
-            <b>Consent:</b>
-            By clicking "I Agree", I have read and understood the information above, and voluntarily agree to participate in the study.
-            <br><br>
-            <span class="text-gray-400 mb-6">If you have any questions or concerns about the study, please contact +63 9058241502</span>
-          </p>
+    <div id="clickArea" class="memTestHide overflow-auto" onclick="hideTestResult()"></div>
+    <div id="formContainer2" class="formWindow items-center h-full w-full">     
+      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:mx-5 border">
+        <div id="testTitle" class="flex flex-wrap justify-center setInitOpacity">
+          <h1 class="w-full text-center text-4xl text-grey-darkest font-comfortaa font-medium">Short-Term Memory Test<br>(Modified Digit Span Test)</h1>
         </div>
-        <div class="flex items-center mb-4">
-          <input id="default-radio-1" type="radio" value="I Agree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-          <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">I Agree</label>
-        </div>
-        <div class="flex items-center mb-8">
-            <input checked id="default-radio-2" type="radio" value="I Disagree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">I Disagree</label>
-        </div>
-          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit">Submit/Next</button></div>
-          <div class="float-right"><p class="text-right text-grey-darkest">(1/3)</p></div>
+        <div id="testContainer" class="flex h-full w-full testMargin">
+          <div id="memTestHome" class="grid justify-center h-full w-full">
+            <div id="testDesc" class="setInitTestDescPos">
+              <h2 class="text-center text-grey-darkest font-semibold mb-4 text-lg">How many numbers can you remember?</h2>
+            </div>
+            <div id="startTest" class="flex w-full justify-center setInitOpacity">
+              <button id="startBtn" class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 text-xl shadow" type="button">Start Test</button>
+            </div>
+          </div>
+          <div id="memTestMain" class="memTestHide w-full justify-center">
+            <div id="timerContainer">
+              <h1 id="numberSpanDisplay" class="font-comfortaa text-6xl text-center mb-6"></h1>
+              <g id="timer" class="timer memTestHide">
+                <svg width="160" height="60" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                  <line x1="40" x2="120" y1="10" y2="10" stroke="#DBDBDB" stroke-width="8"/>
+                  <path
+                    id="timerPath"
+                    stroke-dasharray="80"
+                    class="timerRemainingPath"
+                    stroke="#B2B2B2"
+                    d="
+                      M 40, 10
+                      L 120, 10
+                    "
+                  ></path>
+                </svg>
+              </g>
+            </div>
+          </div>
+          <div id="memTestAnswer" class="memTestHide w-full justify-center">
+              <label for="testAnswer" class="font-comfortaa text-2xl text-center mb-4">What was the number?</label>
+              <input form="testAnswerSubmit" class="border-2 border-slate-200 rounded-md py-3 px-2 text-center focus:outline-slate-300 font-comfortaa text-xl mb-4" type="number" id="testAnswer" name="testAnswer" autocomplete="off"/>
+              <input class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 text-xl shadow" form="testAnswerSubmit" id="answerSubmit" type="submit"></input>
+          </div>       
+          <div id="memTestAnswerResult" class="memTestHide w-full justify-center text-center">
+            
+            <h1 class="font-comfortaa text-2xl text-center mb-3" id="answerResult">insertResultHere</h1>
+            <h2 class="font-comfortaa text-lg text-center mb-2">Correct Answer: 
+              <br><br>
+              <span class="w-full text-center text-6xl text-grey-darkest font-comfortaa " id="answerCorrect"></span>
+            </h2>
+            <p class="mb-1">Your Answer: <span id="answerCurrent"></span></p>
+            <p class="mb-4">Score: <span id="scoreCount"></span></p>
+            <div class="memTestHide setInitOpacity" id="clickNotif">
+            <h1 class="font-comfortaa text-2xl text-center mb-3 text-gray-200">Click Anywhere to Continue</h1>
+            </div>
+            <input form="form" id="finalScore" name="Score" autocomplete="off"  hidden />
+            <div><button class="memTestHide px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit" form="form">Finish</button></div>
+          </div>
       </div>
-    </div>--> 
-  </form>
- 
+        <div class="float-right"><p class="py-1 text-right text-grey-darkest">(3/3)</p></div>
+    </div>
+  </div>
+
 
 
 </body>
 
-<script>
+<script>// Buttons | Onclick Transition Callback | Page Change Actions
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwRH8UqWd7SUvGpmku7IhvfCZtoJwSQk_iP2OLYPw2Noq1W_EK2-B3_JDrefmF1s_Qk/exec'
     const form = document.querySelector('#form')
-    const btn = document.querySelector('#submit')
-    const nextBtn = document.querySelectorAll('form .nextBtn')
-    const formWindows = Array.from(document.querySelectorAll('form .formWindow'))
-    const active = document.querySelector('form .formWindow.active')
+    const answerForm = document.getElementById('testAnswerSubmit')
+    const answerGet = document.getElementById('testAnswer')
+    const formSubmitBtn = document.getElementById('submit')
+    const answerSubmit= document.getElementById('answerSubmit')
+    const nextBtn = document.getElementById("beegContainer").querySelectorAll('.nextBtn')
+    const startBtn = document.querySelector('#startBtn')
+    const formWindows = Array.from(document.getElementById("beegContainer").querySelectorAll('.formWindow'))
+    const active = document.getElementById("beegContainer").querySelector('.formWindow.active')
+    var answerCurrent
     var index = formWindows.indexOf(active)
     var indexAnim = index + 1
-    console.log(formWindows);
+    //console.log(formWindows);
 
-    nextBtn.forEach(button => {
-      button.addEventListener('click', (e) => {
-      disappear('formContainer'+ index)
-        .then(() => setTimeout(() => toggle_visibility('formContainer' + index), 310))
-        .then(() => setTimeout(() => nextForm('next'), 310))
-        .then(() => setInitPos('formContainer'+ indexAnim))
-        .then(() => toggle_visibility('formContainer'+ indexAnim))
-        .then(() => setTimeout(() => appear('formContainer'+ indexAnim), 310))
-      })
-    });
-    
+    startBtn.disabled = true
+    formSubmitBtn.disabled = true
+
+    function textOpacityAnim(id){
+      if(document.getElementById(id).classList.contains('active')){
+        setTimeout(() => document.getElementById('testTitle').classList.toggle('appear'), 1200)
+        setTimeout(() => document.getElementById('testDesc').classList.toggle('appear'), 1600)
+        setTimeout(() => document.getElementById('startTest').classList.toggle('appear'), 2000)
+        setTimeout(() => document.getElementById("numberSpanDisplay").innerHTML, 2000)
+        setTimeout(() => startBtn.disabled = false, 2000)
+        setTimeout(() => document.getElementById('formContainer2').classList.toggle('setInitPos'), 3000)
+        setTimeout(() => document.getElementById('formContainer2').classList.toggle('appear'), 3001)
+      }      
+    }
+
     function toggle_visibility(id){
       document.getElementById(id).classList.toggle('active')
     }
 
     function nextForm(btn){
-      console.log(index)
+      //console.log(index)
+      //console.log(indexAnim)
       if(btn === 'next'){
         index ++
       }
     }
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      btn.disabled = true
-      btn.innerHTML = "Loading..."
+    function hideTestResult(){
+      document.getElementById('clickArea').classList.toggle('clickArea')
+      document.getElementById('clickNotif').classList.toggle('memTestAppear')
+      document.getElementById('clickNotif').classList.toggle('appear')
+      document.getElementById('memTestAnswerResult').classList.toggle('memTestAppear')
+      setTimeout(() => document.getElementById('memTestMain').classList.toggle('memTestAppear'), 410)
+      setTimeout(() => document.getElementById('timer').classList.toggle('memTestAppear'), 690)
+      setTimeout(() => startTimerMeasure(), 590)     
+      answerSubmit.disabled = false
+    }
 
-      console.log(form)
+    function disappearFinal(id){
+      document.getElementById(id).classList.add('disappearTest')
+    }
+
+    nextBtn.forEach(button => {
+      button.addEventListener('click', (e) => {
+      removeAppear('formContainer' + index)
+      disappear('formContainer'+ index)
+        .then(() => setTimeout(() => toggle_visibility('formContainer' + index), 310))
+        .then(() => setTimeout(() => nextForm('next'), 310))
+        .then(() => removeSetInitPos('formContainer'+ index))
+        .then(() => setInitPos('formContainer'+ indexAnim))
+        .then(() => toggle_visibility('formContainer'+ indexAnim))
+        .then(() => setTimeout(() => appear('formContainer'+ indexAnim), 310))
+        .then(() => textOpacityAnim('formContainer2'))
+      indexAnim = index + 1
+      })
+    });
+
+    startBtn.addEventListener('click', (e) => {
+      document.getElementById('memTestHome').classList.toggle('disappearTest')
+      setTimeout(() => document.getElementById('memTestHome').classList.toggle('memTestHide'), 310)
+      setTimeout(() => document.getElementById('memTestMain').classList.toggle('memTestAppear'), 410)
+      setTimeout(() => document.getElementById('numberSpanDisplay').innerHTML = numberDisplay, 690)
+      setTimeout(() => document.getElementById('timer').classList.toggle('memTestAppear'), 690)
+      setTimeout(() => startTimerMeasure(), 590)
+    })
+
+
+    answerForm.addEventListener('submit', (e) =>{
+      e.preventDefault()
+      answerSubmit.disabled = true
+      var answerCurrentLocal = new FormData(answerForm)
+      answerCurrent = answerCurrentLocal.get('testAnswer')
+      answerChecking()
+      document.getElementById('memTestAnswer').classList.toggle('disappearTest')
+      document.getElementById('answerResult').innerHTML = answerResult
+      document.getElementById('scoreCount').innerHTML = score
+      document.getElementById('answerCorrect').innerHTML = answerCorrect
+      document.getElementById('answerCurrent').innerHTML = answerCurrent
+      setTimeout(() => document.getElementById('memTestAnswer').classList.toggle('memTestAppear'), 310)
+      setTimeout(() => document.getElementById('memTestAnswer').classList.toggle('disappearTest'), 310)
+      setTimeout(() => document.getElementById('memTestAnswerResult').classList.toggle('memTestAppear'), 410)
+      
+      //console.log(answerCurrent)
+    })
+
+
+    
+    form.addEventListener('submit', e => {
+      //console.log("it work")
+      e.preventDefault()
+      formSubmitBtn.disabled = true
+      formSubmitBtn.innerHTML = "Loading..."
+      //console.log(form)
+      
       fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => { 
-            btn.disabled = false
-            btn.innerHTML = "Submit"
+          formSubmitBtn.disabled = false
+          formSubmitBtn.innerHTML = "Submit"
             alert('Success!', response)
-            disappear('formContainer1')
-            .then(() => setTimeout(() => toggle_visibility('formContainer1'), 310))
-            //.then(() => setTimeout(() => toggle_visibility('formContainer2'), 310))
+            
+            .then(() => setTimeout(() => toggle_visibility('formContainer2'), 310))
           })
         
         .catch(error => {
-                     btn.disabled = false
-      btn.innerHTML = "Submit/Next"
-            alert('Error!', error.message)})
+          formSubmitBtn.disabled = false
+          formSubmitBtn.innerHTML = "Done!"
+          disappearFinal('formContainer2')
+          alert('Error!', error.message)})
+          
     })
 </script>
+<script>// High res timer library
+  class Timer {
+  constructor () {
+    this.isRunning = false;
+    this.startTime = 0;
+    this.overallTime = 0;
+  }
+
+  _getTimeElapsedSinceLastStart () {
+    if (!this.startTime) {
+      return 0;
+    }
+  
+    return Date.now() - this.startTime;
+  }
+
+  start () {
+    if (this.isRunning) {
+      return console.error('Timer is already running');
+    }
+
+    this.isRunning = true;
+
+    this.startTime = Date.now();
+  }
+
+  stop () {
+    if (!this.isRunning) {
+      return console.error('Timer is already stopped');
+    }
+
+    this.isRunning = false;
+
+    this.overallTime = this.overallTime + this._getTimeElapsedSinceLastStart();
+  }
+
+  reset () {
+    this.overallTime = 0;
+
+    if (this.isRunning) {
+      this.startTime = Date.now();
+      return;
+    }
+
+    this.startTime = 0;
+  }
+
+  getTime () {
+    if (!this.startTime) {
+      return 0;
+    }
+
+    if (this.isRunning) {
+      return this.overallTime + this._getTimeElapsedSinceLastStart();
+    }
+
+    return this.overallTime;
+  }
+}
+  
+  
+  
+</script>
+<script>// Timer
+  var TIME_LIMIT = 2000;
+  var TIME_LIMIT_MULTIPLIER = 0;
+  var TIME_LIMIT_PREV = 0;
+  const FULL_DASH_ARRAY = 80;
+  const timer = new Timer();
+  let timeLeft = TIME_LIMIT;
+  let timerInterval = null;
+  
+
+
+
+  function startTimerMeasure() {
+    timer.start(); 
+    timerInterval = setInterval(() => {
+      let timePassed = Math.round(timer.getTime());
+      timeLeft = TIME_LIMIT - timePassed; 
+      setLineDasharray()
+      if(setLineDasharray('done')){
+        clearInterval(timerInterval)
+        setTimeout(() => timer.stop(), 0.5)  
+        setTimeout(() => document.getElementById('memTestMain').classList.toggle('memTestAppear'), 0.5)
+        setTimeout(() => document.getElementById('memTestAnswer').classList.toggle('memTestAppear'), 0.5)
+        setTimeout(() => document.getElementById('timer').classList.toggle('memTestAppear'), 0.5)
+        timer.reset()
+        timeLeft = TIME_LIMIT
+        setLineDasharray()
+      }
+    }, 1);//cpu benchmark(real)
+  }
+
+  // Divides time left by the defined time limit.
+  function calculateTimeFraction() {
+    const rawTimeFraction = timeLeft / TIME_LIMIT;
+    return rawTimeFraction;
+  }
+      
+  // Update the dasharray value as time passes, starting with 283
+  function setLineDasharray() {
+    const timeFractionCallback = calculateTimeFraction() * FULL_DASH_ARRAY
+    const lineDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 80`;
+    document.getElementById("timerPath").setAttribute("stroke-dasharray", lineDasharray);
+    //console.log(calculateTimeFraction('rawTimeFraction'))
+    //console.log(lineDasharray)
+    if(timeFractionCallback <= 0){
+      return 'done'
+    }
+  }
+
+</script>
+<script>
+    var randNum = Math.floor(Math.random() * 10) //intial value in numberStorage
+    var numberStorage = [randNum] //numberStorage == is the Array
+    var numberDisplay = numberStorage.join('') //convert array values to string
+    var answerCorrect = numberDisplay //yes
+    var score = 0 //yes2
+    var digitCount = numberStorage.length //count number of values in array
+    var answerResult
+
+    
+  function answerChecking(){
+    if(answerCurrent == answerCorrect){
+      for(let i = 0; i < digitCount + 1; i++){
+          numberStorage[i] = Math.floor(Math.random() * 10)
+        }
+      answerResult = "Correct!!"
+      score += 1
+      digitCount += 1
+      numberDisplay = numberStorage.join('')
+      document.getElementById('numberSpanDisplay').innerHTML = numberDisplay
+      setTimeout(() => document.getElementById('clickNotif').classList.toggle('memTestAppear'), 410)
+      setTimeout(() => document.getElementById('clickNotif').classList.toggle('appear'), 100)
+      setTimeout(() => document.getElementById('clickArea').classList.toggle('clickArea'), 100)
+      setTimeout(() => answerCorrect = numberDisplay, 100)
+      document.getElementById('testAnswer').value = ""
+      TIME_LIMIT_MULTIPLIER += 1
+      TIME_LIMIT_PREV = TIME_LIMIT
+      TIME_LIMIT = TIME_LIMIT_PREV + (TIME_LIMIT_PREV * (1.6**((Math.log10(1.4)*TIME_LIMIT_MULTIPLIER)) - 1))
+      //console.log(TIME_LIMIT_MULTIPLIER)
+      
+    } else {
+        answerResult = "Incorrect :("
+        formSubmitBtn.disabled = false
+        document.getElementById('submit').classList.toggle('memTestAppear')
+    }
+      document.getElementById('finalScore').setAttribute('value', score)  
+      //console.log(numberDisplay)
+      //console.log(numberStorage)
+      //console.log(score)
+      
+
+      
+  }
+
+</script>
 </html>
+
+

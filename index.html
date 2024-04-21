@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 2 Research Survey</title>
-    <link href="https://raw.githack.com/teaphrog/research-STM-DGSTest/main/main-web/output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
 </head>
 
 <script type="text/javascript"> // Transitions
@@ -56,18 +56,18 @@
           </p>
         </div>
         <div class="flex items-center mb-4">
-          <input form="form" id="default-radio-1" type="radio" value="I Agree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <input form="form" id="default-radio-1" type="radio" value="" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" onclick="setConsentAgree()">
           <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900" >I Agree</label>
         </div>
         <div class="flex items-center mb-8">
-            <input form="form" id="default-radio-2" type="radio" value="I Disagree" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <input form="form" id="default-radio-2" type="radio" value="" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" onclick="setConsentDisagree()">
             <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">I Disagree</label>
         </div>
-          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn" type="button" form="form">Next</button></div>
+          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn0" type="button" form="form">Next</button></div>
           <div class="float-right"><p class="py-1 text-grey-darkest">(1/3)</p></div>
       </div>
     </div>
-    <div id="formContainer1" class="formWindow items-center h-full w-full">
+    <div id="formContainer1" class="formWindow items-center h-full w-full justify-center">
       <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
         <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Sleep Report Questionnaire</h1>
         <div class="flex flex-wrap">
@@ -93,7 +93,7 @@
           </p>
         </div>
         <div class="flex items-center mb-9">
-          <select form="form" name="Daily Reported Average Sleep Duration" class= "ms-2 text-sm font-medium text-gray-900 border-2 rounded px-2.5 py-2.5">
+          <select form="form" id="DailyAvgSleepDuration" name="Daily Reported Average Sleep Duration" class= "ms-2 text-sm font-medium text-gray-900 border-2 rounded px-2.5 py-2.5">
             <option style='display:none' value=""></option>
             <option value="1-2">1-2 hours</option>
             <option value="2-4">2-4 hours</option>
@@ -108,7 +108,7 @@
             How many hours of sleep did you get last night?
           </p>
         <div class="flex items-center mb-9">
-          <select form="form" name="Reported Sleep Duration(Yesterday)" class= "ms-2 text-sm font-medium text-gray-900 border-2 rounded px-2.5 py-2.5">
+          <select form="form" id="ReportedSleepDuration" name="Reported Sleep Duration(Yesterday)" class= "ms-2 text-sm font-medium text-gray-900 border-2 rounded px-2.5 py-2.5">
             <option style='display:none' value=""></option>
             <option value="1-2">less than an hour</option>
             <option value="1-2">1-2 hours</option>
@@ -153,16 +153,16 @@
           <p class="ms-2">- Very Satisfied</p>
         </div>
         <div class="flex items-center likert mt-8 mb-8 w-full justify-center">
-          <label><p class="text-center">1</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="1"/><span style="background:#ff7480;"></span></label>
-          <label><p class="text-center">2</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="2"/><span style="background:#ff8b94;"></span></label>
-          <label><p class="text-center">3</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="3"/><span style="background:#ffaaa5;"></span></label>
-          <label><p class="text-center">4</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="4"/><span style="background:#ffd3b6;"></span></label>
-          <label><p class="text-center">5</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="5"/><span style="background:#dcedc1;"></span></label>
-          <label><p class="text-center">6</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="6"/><span style="background:#a8e6cf;"></span></label>
-          <label><p class="text-center">7</p><input form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="7"/><span style="background:#84e3c8;"></span></label>
+          <label><p class="text-center">1</p><input id="likertVal1" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="1"/><span style="background:#ff7480;"></span></label>
+          <label><p class="text-center">2</p><input id="likertVal2" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="2"/><span style="background:#ff8b94;"></span></label>
+          <label><p class="text-center">3</p><input id="likertVal3" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="3"/><span style="background:#ffaaa5;"></span></label>
+          <label><p class="text-center">4</p><input id="likertVal4" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="4"/><span style="background:#ffd3b6;"></span></label>
+          <label><p class="text-center">5</p><input id="likertVal5" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="5"/><span style="background:#dcedc1;"></span></label>
+          <label><p class="text-center">6</p><input id="likertVal6" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="6"/><span style="background:#a8e6cf;"></span></label>
+          <label><p class="text-center">7</p><input id="likertVal7" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="7"/><span style="background:#84e3c8;"></span></label>
         </div>
       </div>
-          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn" type="button">Proceed to Memory Test</button></div>
+          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn1" type="button">Proceed to Memory Test</button></div>
           <div class="float-right"><p class="py-1 text-grey-darkest">(2/3)</p></div> 
       </div>
     </div>
@@ -184,7 +184,7 @@
           <div id="memTestMain" class="memTestHide w-full justify-center">
             <div id="timerContainer">
               <h1 id="numberSpanDisplay" class="font-comfortaa text-6xl text-center mb-6"></h1>
-              <g id="timer" class="timer memTestHide">
+              <g id="timer" class="timer memTestHide justify-center">
                 <svg width="160" height="60" xmlns="http://www.w3.org/2000/svg" version="1.1">
                   <line x1="40" x2="120" y1="10" y2="10" stroke="#DBDBDB" stroke-width="8"/>
                   <path
@@ -215,8 +215,16 @@
             </h2>
             <p class="mb-1">Your Answer: <span id="answerCurrent"></span></p>
             <p class="mb-4">Score: <span id="scoreCount"></span></p>
-            <div class="memTestHide setInitOpacity" id="clickNotif">
-            <h1 class="font-comfortaa text-2xl text-center mb-3 text-gray-200">Click Anywhere to Continue</h1>
+            <div id="clickNotif">
+            <h1 class="font-comfortaa text-2xl text-center mb-3 text-gray-200" 
+            style=    
+            "-webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;">
+            Click Anywhere to Continue</h1>
             </div>
             <input form="form" id="finalScore" name="Score" autocomplete="off"  hidden />
             <div><button class="memTestHide px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200" type="submit" id="submit" form="form">Finish</button></div>
@@ -225,7 +233,6 @@
         <div class="float-right"><p class="py-1 text-right text-grey-darkest">(3/3)</p></div>
     </div>
   </div>
-
 
 
 </body>
@@ -237,7 +244,8 @@
     const answerGet = document.getElementById('testAnswer')
     const formSubmitBtn = document.getElementById('submit')
     const answerSubmit= document.getElementById('answerSubmit')
-    const nextBtn = document.getElementById("beegContainer").querySelectorAll('.nextBtn')
+    const nextBtn0 = document.getElementById("beegContainer").querySelectorAll('.nextBtn0')
+    const nextBtn1 = document.getElementById("beegContainer").querySelectorAll('.nextBtn1')
     const startBtn = document.querySelector('#startBtn')
     const formWindows = Array.from(document.getElementById("beegContainer").querySelectorAll('.formWindow'))
     const active = document.getElementById("beegContainer").querySelector('.formWindow.active')
@@ -248,6 +256,15 @@
 
     startBtn.disabled = true
     formSubmitBtn.disabled = true
+
+    function setConsentDisagree(){
+      document.getElementById("default-radio-2").value="I Disagree"
+    }
+
+    function setConsentAgree(){
+      document.getElementById("default-radio-1").value="I Agree"
+      document.getElementById("default-radio-2").value=""
+    }
 
     function textOpacityAnim(id){
       if(document.getElementById(id).classList.contains('active')){
@@ -275,8 +292,8 @@
 
     function hideTestResult(){
       document.getElementById('clickArea').classList.toggle('clickArea')
-      document.getElementById('clickNotif').classList.toggle('memTestAppear')
-      document.getElementById('clickNotif').classList.toggle('appear')
+      //document.getElementById('clickNotif').classList.toggle('block')
+      //document.getElementById('clickNotif').classList.toggle('appear')
       document.getElementById('memTestAnswerResult').classList.toggle('memTestAppear')
       setTimeout(() => document.getElementById('memTestMain').classList.toggle('memTestAppear'), 410)
       setTimeout(() => document.getElementById('timer').classList.toggle('memTestAppear'), 690)
@@ -288,8 +305,7 @@
       document.getElementById(id).classList.add('disappearTest')
     }
 
-    nextBtn.forEach(button => {
-      button.addEventListener('click', (e) => {
+    function startNextPageAnim(){
       removeAppear('formContainer' + index)
       disappear('formContainer'+ index)
         .then(() => setTimeout(() => toggle_visibility('formContainer' + index), 310))
@@ -300,6 +316,26 @@
         .then(() => setTimeout(() => appear('formContainer'+ indexAnim), 310))
         .then(() => textOpacityAnim('formContainer2'))
       indexAnim = index + 1
+    }
+
+    nextBtn0.forEach(button => {
+      button.addEventListener('click', (e) => {
+        if(
+          document.getElementById("default-radio-2").value == "I Disagree" ||
+          document.getElementById("default-radio-1").value == "" 
+        ){
+          alert('Please Select "I Agree" to Continue.')
+          document.getElementById("default-radio-2").value=""
+        } else{
+          startNextPageAnim()
+        }
+
+      })
+    });
+
+    nextBtn1.forEach(button => {
+      button.addEventListener('click', (e) => {
+        startNextPageAnim()
       })
     });
 
@@ -344,7 +380,7 @@
         .then(response => { 
           formSubmitBtn.disabled = false
           formSubmitBtn.innerHTML = "Submit"
-            alert('Success!', response)
+            alert('Response Submitted! Thank you for answering the survey.', response)
             
             .then(() => setTimeout(() => toggle_visibility('formContainer2'), 310))
           })
@@ -353,7 +389,7 @@
           formSubmitBtn.disabled = false
           formSubmitBtn.innerHTML = "Done!"
           disappearFinal('formContainer2')
-          alert('Error!', error.message)})
+        })
           
     })
 </script>
@@ -424,6 +460,7 @@
   var TIME_LIMIT = 2000;
   var TIME_LIMIT_MULTIPLIER = 0;
   var TIME_LIMIT_PREV = 0;
+  var TIMER_CAP = 0;
   const FULL_DASH_ARRAY = 80;
   const timer = new Timer();
   let timeLeft = TIME_LIMIT;
@@ -490,15 +527,21 @@
       digitCount += 1
       numberDisplay = numberStorage.join('')
       document.getElementById('numberSpanDisplay').innerHTML = numberDisplay
-      setTimeout(() => document.getElementById('clickNotif').classList.toggle('memTestAppear'), 410)
-      setTimeout(() => document.getElementById('clickNotif').classList.toggle('appear'), 100)
+      //setTimeout(() => document.getElementById('clickNotif').classList.toggle('block'), 410)
+      //setTimeout(() => document.getElementById('clickNotif').classList.toggle('appear'), 100)
       setTimeout(() => document.getElementById('clickArea').classList.toggle('clickArea'), 100)
       setTimeout(() => answerCorrect = numberDisplay, 100)
       document.getElementById('testAnswer').value = ""
       TIME_LIMIT_MULTIPLIER += 1
+      TIMER_CAP = TIME_LIMIT_MULTIPLIER
       TIME_LIMIT_PREV = TIME_LIMIT
-      TIME_LIMIT = TIME_LIMIT_PREV + (TIME_LIMIT_PREV * (1.6**((Math.log10(1.4)*TIME_LIMIT_MULTIPLIER)) - 1))
+      if(TIMER_CAP > 12){
+        TIME_LIMIT = 15000
+      } else {
+        TIME_LIMIT = (2000 * (1.7**((Math.log10(1.4)*(TIME_LIMIT_MULTIPLIER - 1)))))*(1.7**((Math.log10(1.4)*TIME_LIMIT_MULTIPLIER)))
+      }      
       //console.log(TIME_LIMIT_MULTIPLIER)
+      console.log(TIME_LIMIT)
       
     } else {
         answerResult = "Incorrect :("

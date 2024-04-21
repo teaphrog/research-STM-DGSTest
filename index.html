@@ -183,7 +183,14 @@
           </div>
           <div id="memTestMain" class="memTestHide w-full justify-center">
             <div id="timerContainer">
-              <h1 id="numberSpanDisplay" class="font-comfortaa text-6xl text-center mb-6"></h1>
+              <h1 id="numberSpanDisplay" class="font-comfortaa text-6xl text-center mb-6" 
+              style=    
+              "-webkit-touch-callout: none;
+              -webkit-user-select: none;
+              -khtml-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;"></h1>
               <g id="timer" class="timer memTestHide justify-center">
                 <svg width="160" height="60" xmlns="http://www.w3.org/2000/svg" version="1.1">
                   <line x1="40" x2="120" y1="10" y2="10" stroke="#DBDBDB" stroke-width="8"/>
@@ -546,6 +553,7 @@
     } else {
         answerResult = "Incorrect :("
         formSubmitBtn.disabled = false
+        document.getElementById('clickNotif').classList.toggle('memTestHide')
         document.getElementById('submit').classList.toggle('memTestAppear')
     }
       document.getElementById('finalScore').setAttribute('value', score)  

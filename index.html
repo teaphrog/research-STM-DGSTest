@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 2 Research Survey</title>
-    <link href="https://rawcdn.githack.com/teaphrog/research-STM-DGSTest/40c631012ff1c5a7bc8d8c5e446f52ec75d1324a/main-web/output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
 </head>
 
 <script type="text/javascript"> // Transitions
@@ -37,7 +37,7 @@
   
   <form id="form"></form>
   <form id="testAnswerSubmit"></form>
-  <div class="beegContainer mb-4 flex flex-wrap justify-center w-full" id="beegContainer">
+  <!--<div class="beegContainer mb-4 flex flex-wrap justify-center" id="beegContainer">-->
     <div id="formContainer0" class="formWindow active items-center h-full w-full">
       <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
         <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Short-Term Memory Test & Sleep Questionnaire</h1>
@@ -168,7 +168,7 @@
     </div>
     <div id="clickArea" class="memTestHide overflow-auto" onclick="hideTestResult()"></div>
     <div id="formContainer2" class="formWindow items-center h-full w-full">     
-      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:mx-5 border">
+      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:mx-5 border" style="">
         <div id="testTitle" class="flex flex-wrap justify-center setInitOpacity">
           <h1 class="w-full text-center text-4xl text-grey-darkest font-comfortaa font-medium">Short-Term Memory Test<br>(Modified Digit Span Test)</h1>
         </div>
@@ -182,10 +182,13 @@
             </div>
           </div>
           <div id="memTestMain" class="memTestHide w-full justify-center">
-            <div id="timerContainer">
-              <h1 id="numberSpanDisplay" class="font-comfortaa text-6xl text-center mb-6" 
+            <div id="timerContainer" class="flex flex-wrap justify-center text-center" style="">
+              <h1 id="numberSpanDisplay" class="font-comfortaa text-6xl text-center mb-6 w-full" 
               style=    
-              "-webkit-touch-callout: none;
+              "
+              word-break: break-word;
+              overflow-wrap:break-word;
+              -webkit-touch-callout: none;
               -webkit-user-select: none;
               -khtml-user-select: none;
               -moz-user-select: none;
@@ -239,8 +242,7 @@
       </div>
         <div class="float-right"><p class="py-1 text-right text-grey-darkest">(3/3)</p></div>
     </div>
-  </div>
-
+  <!--</div>-->
 
 </body>
 
@@ -251,11 +253,11 @@
     const answerGet = document.getElementById('testAnswer')
     const formSubmitBtn = document.getElementById('submit')
     const answerSubmit= document.getElementById('answerSubmit')
-    const nextBtn0 = document.getElementById("beegContainer").querySelectorAll('.nextBtn0')
-    const nextBtn1 = document.getElementById("beegContainer").querySelectorAll('.nextBtn1')
+    const nextBtn0 = document.querySelectorAll('.nextBtn0')
+    const nextBtn1 = document.querySelectorAll('.nextBtn1')
     const startBtn = document.querySelector('#startBtn')
-    const formWindows = Array.from(document.getElementById("beegContainer").querySelectorAll('.formWindow'))
-    const active = document.getElementById("beegContainer").querySelector('.formWindow.active')
+    const formWindows = Array.from(document.querySelectorAll('.formWindow'))
+    const active = document.querySelector('.formWindow.active')
     var answerCurrent
     var index = formWindows.indexOf(active)
     var indexAnim = index + 1

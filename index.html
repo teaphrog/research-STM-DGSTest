@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMA Grade 12 Group 2 Research Survey</title>
+    <title>Group 2 Research Survey</title>
     <link href="https://rawcdn.githack.com/teaphrog/research-STM-DGSTest/40c631012ff1c5a7bc8d8c5e446f52ec75d1324a/main-web/output.css" rel="stylesheet">
 </head>
 
@@ -37,153 +37,18 @@
   
   <form id="form"></form>
   <form id="testAnswerSubmit"></form>
-  <!--<div class="beegContainer mb-4 flex flex-wrap justify-center" id="beegContainer">-->
-    <div id="formContainer0" class="formWindow active items-center h-full w-full">
-      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
-        <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Short-Term Memory Test & Sleep Questionnaire</h1>
-        <div class="flex flex-wrap">
-          <p class="text-grey-darkest mb-6">
-            Dear Participant,
-            <br><br>
-            You are invited to take part in our research study investigating the potential relationship between sleep duration and short-term memory. Before proceeding, we would like to kindly ask for your consent on taking part in this survey.
-            <br><br>
-            This survey follows the <b>Data Privacy Republic Act of 2012(R.A. 10173)</b> which requires processing the data only of individuals that has given consent. The data we(the researchers), gather from the individuals in this survey, will strictly only be used for research purposes.
-            <br><br>
-            <b><u>Consent:</u><br>
-            By clicking "I Agree", I have read and understood the information above, and voluntarily agree to participate in the study.</b>
-            <br><br>
-            <span class="text-gray-400 mb-6">If you have any questions or concerns about the study, please contact +63 9058241502</span>
-          </p>
-        </div>
-        <div class="flex items-center mb-4">
-          <input form="form" id="default-radio-1" type="radio" value="" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" onclick="setConsentAgree()">
-          <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900" >I Agree</label>
-        </div>
-        <div class="flex items-center mb-8">
-            <input form="form" id="default-radio-2" type="radio" value="" name="Consent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" onclick="setConsentDisagree()">
-            <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">I Disagree</label>
-        </div>
-        <div>
-          <label for="participantName"><b><u>Name:</b></u> </label>
-        </div>
-        <div>
-          <input form="form" class="border-2 border-slate-200 rounded-md py-3 px-2 text-center focus:outline-slate-300 font-comfortaa text-xl mb-4" id="participantName" name="Name" autocomplete="off"/>
-        </div>
-          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn0" type="button" form="form">Next</button></div>
-          <div class="float-right"><p class="py-1 text-grey-darkest">(1/3)</p></div>
-      </div>
-    </div>
-    <div id="formContainer1" class="formWindow items-center h-full w-full justify-center">
-      <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto border">
-        <h1 class="block w-full text-center text-grey-darkest font-semibold mb-6">Sleep Report Questionnaire</h1>
-        <div class="flex flex-wrap">
-          <p class="text-grey-darkest font-semibold mb-4">
-            Strand
-          </p>
-        </div>
-        <div class="flex items-center mb-4">
-          <input id="default-radio-3"  onclick="setStrandGAS()" form="form" type="radio" value="" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-          <label for="default-radio-3" class="ms-2 text-sm font-medium text-gray-900">General Academic Strand(GAS)</label>
-        </div>
-        <div class="flex items-center mb-4">
-            <input id="default-radio-4"  onclick="setStrandHUMSS()" form="form" type="radio" value="" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="default-radio-4" class="ms-2 text-sm font-medium text-gray-900">Humanities and Social Sciences(HUMSS)</label>
-        </div>
-        <div class="flex items-center mb-9">
-            <input id="default-radio-5"  onclick="setStrandSTEM()" form="form" type="radio" value="" name="Strand" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="default-radio-5" class="ms-2 text-sm font-medium text-gray-900">Science, Technology, Engineering, and Mathematics(STEM)</label>
-        </div>
-        <div class="flex flex-wrap">
-          <p class="text-grey-darkest font-semibold mb-4">
-            How many hours of sleep on a daily basis do you get on average?
-          </p>
-        </div>
-        <div class="flex items-center mb-9">
-          <select form="form" id="DailyAvgSleepDuration" name="Daily Reported Average Sleep Duration" class= "ms-2 text-sm font-medium text-gray-900 border-2 rounded px-2.5 py-2.5">
-            <option style='display:none' value=""></option>
-            <option value="1-2">1-2 hours</option>
-            <option value="2-4">2-4 hours</option>
-            <option value="4-6">4-6 hours</option>
-            <option value="6-8">6-8 hours</option>
-            <option value="8-10">8-10 hours</option>
-            <option value="10+">more than 10 hours</option>
-          </select>
-        </div>
-      <div class="flex flex-wrap">
-          <p class="text-grey-darkest font-semibold mb-4">
-            How many hours of sleep did you get last night?
-          </p>
-        <div class="flex items-center mb-9">
-          <select form="form" id="ReportedSleepDuration" name="Reported Sleep Duration(Yesterday)" class= "ms-2 text-sm font-medium text-gray-900 border-2 rounded px-2.5 py-2.5">
-            <option style='display:none' value=""></option>
-            <option value="1-2">less than an hour</option>
-            <option value="1-2">1-2 hours</option>
-            <option value="2-4">2-4 hours</option>
-            <option value="4-6">4-6 hours</option>
-            <option value="6-8">6-8 hours</option>
-            <option value="8-10">8-10 hours</option>
-            <option value="10+">more than 10 hours</option>
-          </select>
-        </div>
-
-        <p class="text-grey-darkest font-semibold mb-4">
-          On a 1-7 scale, what do you rate your quality of sleep last night?
-        </p>
-        
-        <div class="flex items-center">
-          <div class="flex items-center likert scaleContainer ms-2" style="background:#ff7480;"></div>
-          <p class="ms-2">- Very Dissatisfied</p>
-        </div>
-        <div class="flex items-center w-full">
-          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#ff8b94;"></div>
-          <p class="ms-2">- Dissatisfied</p>
-        </div>
-        <div class="flex items-center w-full">
-          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#ffaaa5;"></div>
-          <p class="ms-2">- Slightly Dissatisfied</p>
-        </div>
-        <div class="flex items-center w-full">
-          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#ffd3b6;"></div>
-          <p class="ms-2">- Neutral</p>
-        </div>
-        <div class="flex items-center w-full">
-          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#dcedc1;"></div>
-          <p class="ms-2">- Slightly Satisfied</p>
-        </div>
-        <div class="flex items-center w-full">
-          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#a8e6cf;"></div>
-          <p class="ms-2">- Satisfied</p>
-        </div>
-        <div class="flex items-center w-full">
-          <div class="flex items-center likert scaleContainer ms-2 w-full" style="background:#84e3c8;"></div>
-          <p class="ms-2">- Very Satisfied</p>
-        </div>
-        <div class="flex items-center likert mt-8 mb-8 w-full justify-center">
-          <label><p class="text-center">1</p><input id="likertVal1" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="" onclick="setLikertValue1()"/><span style="background:#ff7480;"></span></label>
-          <label><p class="text-center">2</p><input id="likertVal2" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="" onclick="setLikertValue2()"/><span style="background:#ff8b94;"></span></label>
-          <label><p class="text-center">3</p><input id="likertVal3" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="" onclick="setLikertValue3()"/><span style="background:#ffaaa5;"></span></label>
-          <label><p class="text-center">4</p><input id="likertVal4" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="" onclick="setLikertValue4()"/><span style="background:#ffd3b6;"></span></label>
-          <label><p class="text-center">5</p><input id="likertVal5" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="" onclick="setLikertValue5()"/><span style="background:#dcedc1;"></span></label>
-          <label><p class="text-center">6</p><input id="likertVal6" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="" onclick="setLikertValue6()"/><span style="background:#a8e6cf;"></span></label>
-          <label><p class="text-center">7</p><input id="likertVal7" form="form" name="Yesterday Sleep Rating(Likert's Scale)" type="radio" value="" onclick="setLikertValue7()"/><span style="background:#84e3c8;"></span></label>
-        </div>
-      </div>
-          <div class="float-left"><button class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 nextBtn1" type="button">Proceed to Memory Test</button></div>
-          <div class="float-right"><p class="py-1 text-grey-darkest">(2/3)</p></div> 
-      </div>
-    </div>
-    <div id="clickArea" class="memTestHide overflow-auto" onclick="hideTestResult()"></div>
-    <div id="formContainer2" class="formWindow items-center h-full w-full">     
+  <div id="clickArea" class="memTestHide overflow-auto" onclick="hideTestResult()"></div>
+    <div id="formContainer2" class="formWindow active items-center h-full w-full">     
       <div class="w-full bg-white rounded-xl shadow-lg p-8 m-4 md:mx-5 border" style="">
-        <div id="testTitle" class="flex flex-wrap justify-center setInitOpacity">
+        <div id="testTitle" class="flex flex-wrap justify-center setInitOpacity appear">
           <h1 class="w-full text-center text-4xl text-grey-darkest font-comfortaa font-medium">Short-Term Memory Test<br>(Modified Digit Span Test)</h1>
         </div>
         <div id="testContainer" class="flex h-full w-full testMargin">
           <div id="memTestHome" class="grid justify-center h-full w-full">
-            <div id="testDesc" class="setInitTestDescPos">
+            <div id="testDesc" class="setInitTestDescPos appear">
               <h2 class="text-center text-grey-darkest font-semibold mb-4 text-lg">How many numbers can you remember?</h2>
             </div>
-            <div id="startTest" class="flex w-full justify-center setInitOpacity">
+            <div id="startTest" class="flex w-full justify-center setInitOpacity appear">
               <button id="startBtn" class="px-3 py-1 rounded-lg mx-auto border hover:bg-slate-200 text-xl shadow" type="button">Start Test</button>
             </div>
           </div>
@@ -248,12 +113,12 @@
       </div>
         <div class="float-right"><p class="py-1 text-right text-grey-darkest">(3/3)</p></div>
     </div>
-    </div>
+  <!--</div>-->
 
 </body>
 
 <script>// Buttons | Onclick Transition Callback | Page Change Actions
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwRH8UqWd7SUvGpmku7IhvfCZtoJwSQk_iP2OLYPw2Noq1W_EK2-B3_JDrefmF1s_Qk/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz9Ko8r2NjmIEGMlw2o0R9IwnVAGScHNjpdexfzQP8Y3cw2r5H3bOv2tFS0fAsrwW6O/exec'
     const form = document.querySelector('#form')
     const answerForm = document.getElementById('testAnswerSubmit')
     const answerGet = document.getElementById('testAnswer')
@@ -269,7 +134,7 @@
     var indexAnim = index + 1
     //console.log(formWindows);
 
-    startBtn.disabled = true
+    //startBtn.disabled = true
     formSubmitBtn.disabled = true
 
     function setConsentDisagree(){
@@ -280,38 +145,6 @@
       document.getElementById("default-radio-1").value="I Agree"
       document.getElementById("default-radio-2").value=""
     }
-
-    function setStrandGAS(){
-      document.getElementById("default-radio-3").value="GAS"
-    }
-    function setStrandHUMSS(){
-      document.getElementById("default-radio-4").value="HUMSS"
-    }
-    function setStrandSTEM(){
-      document.getElementById("default-radio-5").value="STEM"
-    }
-    function setLikertValue1(){
-      document.getElementById("likertVal1").value="1"
-    }
-    function setLikertValue2(){
-      document.getElementById("likertVal2").value="2"
-    }
-    function setLikertValue3(){
-      document.getElementById("likertVal3").value="3"
-    }
-    function setLikertValue4(){
-      document.getElementById("likertVal4").value="4"
-    }
-    function setLikertValue5(){
-      document.getElementById("likertVal5").value="5"
-    }
-    function setLikertValue6(){
-      document.getElementById("likertVal6").value="6"
-    }
-    function setLikertValue7(){
-      document.getElementById("likertVal7").value="7"
-    }
-
 
     function textOpacityAnim(id){
       if(document.getElementById(id).classList.contains('active')){
@@ -327,14 +160,6 @@
 
     function toggle_visibility(id){
       document.getElementById(id).classList.toggle('active')
-    }
-
-    function nextForm(btn){
-      //console.log(index)
-      //console.log(indexAnim)
-      if(btn === 'next'){
-        index ++
-      }
     }
 
     function hideTestResult(){
@@ -369,52 +194,20 @@
       button.addEventListener('click', (e) => {
         if(
           document.getElementById("default-radio-2").value == "I Disagree" ||
-          document.getElementById("default-radio-1").value == ""
+          document.getElementById("default-radio-1").value == "" 
         ){
           alert('Please Select "I Agree" to Continue.')
           document.getElementById("default-radio-2").value=""
-        } else if(document.getElementById("participantName").value == ""){
-            alert('Please Enter Your Name.')
         } else{
-            startNextPageAnim() 
+          startNextPageAnim()
         }
-
 
       })
     });
 
     nextBtn1.forEach(button => {
       button.addEventListener('click', (e) => {
-        if(
-          (
-            document.getElementById("default-radio-3").value ||
-            document.getElementById("default-radio-4").value ||
-            document.getElementById("default-radio-5").value
-          ) == ""
-        ){
-          alert('Please Select Your Strand.')
-        } else if(document.getElementById("DailyAvgSleepDuration").value == ""){
-            alert('Please Enter Daily Average Sleep Duration.')
-        } else if(document.getElementById("ReportedSleepDuration").value == ""){
-            alert('Please Enter The Duration of Your Sleep Last Night')
-        } else if(
-            (
-              document.getElementById("likertVal1").value ||
-              document.getElementById("likertVal2").value ||
-              document.getElementById("likertVal3").value ||
-              document.getElementById("likertVal4").value ||
-              document.getElementById("likertVal5").value ||
-              document.getElementById("likertVal6").value ||
-              document.getElementById("likertVal7").value        
-            ) == ""
-          ){
-              alert('Please Rate Your Sleep on A Scale of 1-7.')
-        } 
-        
-        else{
-            startNextPageAnim() 
-        }
-
+        startNextPageAnim()
       })
     });
 
@@ -449,7 +242,7 @@
 
     
     form.addEventListener('submit', e => {
-      //console.log("it work")
+      console.log("it work")
       e.preventDefault()
       formSubmitBtn.disabled = true
       formSubmitBtn.innerHTML = "Loading..."
@@ -631,7 +424,7 @@
       document.getElementById('finalScore').setAttribute('value', score)  
       //console.log(numberDisplay)
       //console.log(numberStorage)
-      //console.log(score)
+      console.log(score)
       
 
       

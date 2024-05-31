@@ -477,15 +477,21 @@
       answerSubmit.disabled = true
       var answerCurrentLocal = new FormData(answerForm)
       answerCurrent = answerCurrentLocal.get('testAnswer')
-      answerChecking()
-      document.getElementById('memTestAnswer').classList.toggle('disappearTest')
-      document.getElementById('answerResult').innerHTML = answerResult
-      document.getElementById('scoreCount').innerHTML = score
-      document.getElementById('answerCorrect').innerHTML = answerCorrect
-      document.getElementById('answerCurrent').innerHTML = answerCurrent
-      setTimeout(() => document.getElementById('memTestAnswer').classList.toggle('memTestAppear'), 310)
-      setTimeout(() => document.getElementById('memTestAnswer').classList.toggle('disappearTest'), 310)
-      setTimeout(() => document.getElementById('memTestAnswerResult').classList.toggle('memTestAppear'), 410)
+      
+      if(!answerCurrent){
+        alert("Please Enter a Value.");
+        answerSubmit.disabled = false
+      } else{
+        answerChecking()
+        document.getElementById('memTestAnswer').classList.toggle('disappearTest')
+        document.getElementById('answerResult').innerHTML = answerResult
+        document.getElementById('scoreCount').innerHTML = score
+        document.getElementById('answerCorrect').innerHTML = answerCorrect
+        document.getElementById('answerCurrent').innerHTML = answerCurrent
+        setTimeout(() => document.getElementById('memTestAnswer').classList.toggle('memTestAppear'), 310)
+        setTimeout(() => document.getElementById('memTestAnswer').classList.toggle('disappearTest'), 310)
+        setTimeout(() => document.getElementById('memTestAnswerResult').classList.toggle('memTestAppear'), 410)
+      }
       
       //console.log(answerCurrent)
     })
